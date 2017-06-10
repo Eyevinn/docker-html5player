@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <script type="text/javascript" src="/js/player.js" defer></script>
+    <link rel="stylesheet" href="/stylesheets/container.css"/>
+    <link rel="stylesheet" href="/stylesheets/player.css"/>
+  </head>
+  <body>
+    <div id="player-container"></div>
+  </body>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function(ev) {
+      var playerElement = document.getElementById('player-container');
+      var player = new EyevinnPlayer(playerElement, '<%= source %>');
+      player.init();
+    });
+  </script>
+</html>
