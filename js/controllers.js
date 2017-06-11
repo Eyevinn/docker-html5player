@@ -5,7 +5,7 @@ class Controllers {
 
   render() {
     this.videoContainerElement.className = "eyevinn-player-container";
-    
+
     const controlBarElement = document.createElement('div');
     controlBarElement.className = "eyevinn-player-controls-wrapper controls-animate";
     const controlBarBackgroundElement = document.createElement('div');
@@ -18,7 +18,7 @@ class Controllers {
     // Play/Pause button
     const controlBarPlayPause = document.createElement('div');
     controlBarPlayPause.className = "eyevinn-player-controls-playpause controls-paused";
-    controlBarElement.appendChild(controlBarPlayPause);
+    controlBarControls.appendChild(controlBarPlayPause);
 
     this.videoContainerElement.appendChild(controlBarElement);
 
