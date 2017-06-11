@@ -3,6 +3,10 @@
   background-color: grey;
 }
 
+.eyevinn-player-container {
+  position: relative;
+}
+
 .eyevinn-player-controls-wrapper {
   position: absolute;
   height: 42px;

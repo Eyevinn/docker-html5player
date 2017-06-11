@@ -4,6 +4,8 @@ class Controllers {
   }
 
   render() {
+    this.videoContainerElement.className = "eyevinn-player-container";
+    
     const controlBarElement = document.createElement('div');
     controlBarElement.className = "eyevinn-player-controls-wrapper controls-animate";
     const controlBarBackgroundElement = document.createElement('div');
