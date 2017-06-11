@@ -2,3 +2,52 @@
   width: 100%;
   background-color: grey;
 }
+
+.eyevinn-player-controls-wrapper {
+  position: absolute;
+  height: 42px;
+  bottom: 52px;
+  box-sizing: border-box;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 100%;
+  opacity: 0.7;
+}
+
+.eyevinn-player-controls-background {
+  margin: 0 auto;
+  height: 42px;
+  z-index: 0;
+  background: gray;
+  opacity: 1;
+  box-sizing: border-box;
+  position: absolute;
+  left: 12px;
+  right: 12px;
+}
+
+.eyevinn-player-controls-playpause {
+  border-left: 0;
+  width: 40px;
+  margin-left: 10px;
+  height: 42px;
+  top: -1px;
+}
+
+.controls-paused {
+  background-size: contain;
+  background: url('/img/play-button.svg') no-repeat center center;
+}
+
+.controls-playing {
+  background-size: contain;
+  background: url('/img/pause-button.svg') no-repeat center center;
+}
+
+.controls-animate {
+  -webkit-transition: 1s ease-out;
+  -moz-transition: 1s ease-out;
+  -ms-transition: 1s ease-out;
+  -o-transition: 1s ease-out;
+  transition: 1s ease-out;
+}

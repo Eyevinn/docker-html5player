@@ -1,6 +1,6 @@
 {
   "name": "docker-html5-player",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "HTML5 Player based on Shaka Player",
   "main": "server.js",
   "dependencies": {
