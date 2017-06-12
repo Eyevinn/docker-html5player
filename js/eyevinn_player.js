@@ -25,6 +25,7 @@ class EyevinnPlayer {
     .then((ev) => {
       this.videoControllers = new Controllers(this.playerElement);
       this.videoControllers.render();
+      this.videoControllers.initInteractionHandlers(this.videoElement);
     
       this.videoElement.play();
     });
