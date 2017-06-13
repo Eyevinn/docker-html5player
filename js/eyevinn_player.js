@@ -1,4 +1,5 @@
 const shaka = require('./lib/shaka-player.compiled.js');
+const Controllers = require('./controllers.js');
 
 class EyevinnPlayer {
   constructor(playerElement, videoSource) {
@@ -22,6 +23,13 @@ class EyevinnPlayer {
     });
     this.shakaPlayer.load(this.videoSource)
     .then((ev) => {
+      this.videoControllers = new Controllers(this.playerElement);
+      this.videoControllers.render();
+      this.videoControllers.initInteractionHandlers(this.videoElement);
+      this.videoControllers.initRenderEvents(this.videoElement);
+      this.videoControllers.initRenderStats(this.videoElement, this.shakaPlayer);
+    
+      this.videoElement.muted = true;
       this.videoElement.play();
     });
   }
