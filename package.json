@@ -1,6 +1,6 @@
 {
-  "name": "docker-html5-player",
-  "version": "0.0.2",
+  "name": "eyevinn-html5-player",
+  "version": "0.0.3",
   "description": "HTML5 Player based on Shaka Player",
   "main": "server.js",
   "dependencies": {
@@ -18,6 +18,6 @@
     "build": "$(npm bin)/gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jonas Birmé, Eyevinn Technology",
+  "author": "Jonas Birmé, Eyevinn Technology (info@eyevinn.se)",
   "license": "MIT"
 }
