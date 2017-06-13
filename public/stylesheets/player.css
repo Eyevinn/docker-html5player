@@ -59,11 +59,12 @@
 
 .eyevinn-player-controls-playpause {
   border-left: 0;
-  width: 40px;
+  width: 38px;
   margin-left: 10px;
   height: 32px;
   top: -1px;
   cursor: pointer;
+  float: left;
 }
 
 .controls-paused {
@@ -75,5 +76,28 @@
 .controls-playing {
   background-size: contain;
   background-image: url('/img/pause-button.svg');
+  background-repeat: no-repeat;
+}
+
+.eyevinn-player-controls-muteunmute {
+  border-left: 0;
+  width: 40px;
+  margin-left: 0px;
+  margin-top: 2px;
+  height: 28px;
+  top: 0px;
+  cursor: pointer;
+  float: left;
+}
+
+.controls-muted {
+  background-size: contain;
+  background-image: url('/img/mute.svg');
+  background-repeat: no-repeat;
+}
+
+.controls-unmuted {
+  background-size: contain;
+  background-image: url('/img/speaker.svg');
   background-repeat: no-repeat;
 }

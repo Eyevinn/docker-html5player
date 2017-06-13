@@ -27,6 +27,7 @@ class EyevinnPlayer {
       this.videoControllers.render();
       this.videoControllers.initInteractionHandlers(this.videoElement);
     
+      this.videoElement.muted = true;
       this.videoElement.play();
     });
   }

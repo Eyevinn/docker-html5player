@@ -23,6 +23,12 @@ class Controllers {
     controlBarControls.appendChild(controlBarPlayPause);
     this.controlBarPlayPause = controlBarPlayPause;
 
+    // Mute/Unmute button
+    const controlBarMuteUnmute = document.createElement('div');
+    controlBarMuteUnmute.className = "eyevinn-player-controls-muteunmute controls-muted";
+    controlBarControls.appendChild(controlBarMuteUnmute);
+    this.controlBarMuteUnmute = controlBarMuteUnmute;
+
     this.videoContainerElement.appendChild(controlBarElement);
   }
 
@@ -44,11 +50,30 @@ class Controllers {
       }
     });
 
+    this.controlBarMuteUnmute.addEventListener("click", () => {
+      if (this.videoElement.muted) {
+        this.videoElement.muted = false;
+      } else {
+        this.videoElement.muted = true;
+      }
+    });
+
+    this.initRenderEvents(this.videoElement);
+  }
+
+  initRenderEvents(videoElement) {
     this.videoElement.addEventListener("playing", () => {
       this.controlBarPlayPause.className = "eyevinn-player-controls-playpause controls-playing";
     });
     this.videoElement.addEventListener("pause", () => {
       this.controlBarPlayPause.className = "eyevinn-player-controls-playpause controls-paused";
+    });
+    this.videoElement.addEventListener("volumechange", () => {
+      if (this.videoElement.muted) {
+        this.controlBarMuteUnmute.className = "eyevinn-player-controls-muteunmute controls-muted";
+      } else {
+        this.controlBarMuteUnmute.className = "eyevinn-player-controls-muteunmute controls-unmuted";
+      }
     });
   }
 };
