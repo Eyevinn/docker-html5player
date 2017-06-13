@@ -21,6 +21,8 @@
   box-sizing: border-box;
   width: 100%;
   z-index: 2;
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 1),rgba(255, 255, 255, 0.3) 20%, rgba(0, 0, 0, 0.2));
+  border-radius: 10px;
 }
 
 .eyevinn-player-controls-hide {
@@ -36,17 +38,30 @@
   display: block;
 }
 
+.eyevinn-player-logo {
+  position: absolute;
+  right: 10px;
+  top: 3px;
+  width: 160px;
+  height: 34px;
+  background-image: url('/img/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .eyevinn-player-controls {
   position: relative;
   padding-left: 10px;
   padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .eyevinn-player-controls-playpause {
   border-left: 0;
   width: 40px;
   margin-left: 10px;
-  height: 42px;
+  height: 32px;
   top: -1px;
   cursor: pointer;
 }

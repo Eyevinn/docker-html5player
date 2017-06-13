@@ -13,6 +13,10 @@ class Controllers {
     controlBarElement.appendChild(controlBarControls);
     this.controlBarElement = controlBarElement;
 
+    const controlBarLogo = document.createElement('div');
+    controlBarLogo.className = "eyevinn-player-logo";
+    controlBarElement.appendChild(controlBarLogo);
+
     // Play/Pause button
     const controlBarPlayPause = document.createElement('div');
     controlBarPlayPause.className = "eyevinn-player-controls-playpause controls-playing";
