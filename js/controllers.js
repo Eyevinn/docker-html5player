@@ -1,6 +1,9 @@
+const PT = require('./presentation_time.js');
+
 class Controllers {
   constructor(videoContainerElement) {
     this.videoContainerElement = videoContainerElement;
+    this.showingStats = false;
   }
 
   render() {
@@ -29,7 +32,36 @@ class Controllers {
     controlBarControls.appendChild(controlBarMuteUnmute);
     this.controlBarMuteUnmute = controlBarMuteUnmute;
 
+    // Show stats button
+    const controlBarStats= document.createElement('div');
+    controlBarStats.className = "eyevinn-player-controls-stats";
+    controlBarControls.appendChild(controlBarStats);
+    this.controlBarStats = controlBarStats;
+    
     this.videoContainerElement.appendChild(controlBarElement);
+
+    const statsElement = document.createElement('div');
+    statsElement.className = "eyevinn-player-stats-wrapper eyevinn-player-stats-hide";
+    this.statsElement = statsElement;
+
+    this.videoContainerElement.appendChild(statsElement);
+  }
+
+  renderStats() {
+    const shakaStats = this.shakaPlayer.getStats();
+
+    let statsHtml = "<p>";
+    statsHtml += new PT(this.videoElement.currentTime).toHHMMSS();
+    if (!isNaN(shakaStats.decodedFrames)) {
+      statsHtml += " (" + shakaStats.decodedFrames + " decoded / " + shakaStats.droppedFrames + " dropped)";
+    }
+    statsHtml += "</p>";
+    statsHtml += "<p>";
+    statsHtml += shakaStats.width + "x" + shakaStats.height;
+    statsHtml += " (" + Math.floor(shakaStats.streamBandwidth / 1000) + " kbps / " + Math.floor(shakaStats.estimatedBandwidth / 1000) + " kbps estimated bw)"
+    statsHtml += "</p>";
+
+    this.statsElement.innerHTML = statsHtml;
   }
 
   initInteractionHandlers(videoElement) {
@@ -58,7 +90,14 @@ class Controllers {
       }
     });
 
-    this.initRenderEvents(this.videoElement);
+    this.controlBarStats.addEventListener("click", () => {
+      this.showingStats = !this.showingStats;
+      if (!this.showingStats) {
+        this.statsElement.className = "eyevinn-player-stats-wrapper eyevinn-player-stats-hide";
+      } else {
+        this.statsElement.className = "eyevinn-player-stats-wrapper eyevinn-player-stats-show";        
+      }
+    });
   }
 
   initRenderEvents(videoElement) {
@@ -74,6 +113,14 @@ class Controllers {
       } else {
         this.controlBarMuteUnmute.className = "eyevinn-player-controls-muteunmute controls-unmuted";
       }
+    });
+  }
+
+  initRenderStats(videoElement, shakaPlayer) {
+    this.shakaPlayer = shakaPlayer;
+
+    this.videoElement.addEventListener("timeupdate", () => {
+      this.renderStats();  
     });
   }
 };

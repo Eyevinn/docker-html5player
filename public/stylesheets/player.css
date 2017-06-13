@@ -14,6 +14,32 @@
   opacity: 0.7;
 }
 
+.eyevinn-player-stats-wrapper {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.2);
+  top: 42px;
+  width: 60%;
+  height: 200px;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-left: 20px;
+  font-family: Verdana;
+  font-size: 15px;
+  color: white;
+}
+
+.eyevinn-player-stats-wrapper p {
+  margin-left: 10px;
+}
+
+.eyevinn-player-stats-hide {
+  display: none;
+}
+
+.eyevinn-player-stats-show {
+  display: block;
+}
+
 .eyevinn-player-controls-wrapper {
   position: absolute;
   height: 42px;
@@ -99,5 +125,19 @@
 .controls-unmuted {
   background-size: contain;
   background-image: url('/img/speaker.svg');
+  background-repeat: no-repeat;
+}
+
+.eyevinn-player-controls-stats {
+  border-left: 0;
+  width: 40px;
+  margin-left: 0px;
+  margin-top: 2px;
+  height: 28px;
+  top: 0px;
+  cursor: pointer;
+  float: left;
+  background-size: contain;
+  background-image: url('/img/stats.svg');
   background-repeat: no-repeat;
 }

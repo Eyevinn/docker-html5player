@@ -26,6 +26,8 @@ class EyevinnPlayer {
       this.videoControllers = new Controllers(this.playerElement);
       this.videoControllers.render();
       this.videoControllers.initInteractionHandlers(this.videoElement);
+      this.videoControllers.initRenderEvents(this.videoElement);
+      this.videoControllers.initRenderStats(this.videoElement, this.shakaPlayer);
     
       this.videoElement.muted = true;
       this.videoElement.play();
