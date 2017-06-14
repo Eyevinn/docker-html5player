@@ -47,7 +47,7 @@
   box-sizing: border-box;
   width: 100%;
   z-index: 2;
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 1),rgba(255, 255, 255, 0.3) 20%, rgba(0, 0, 0, 0.2));
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
 }
 
