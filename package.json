@@ -16,6 +16,7 @@
     "gulp-buffer": "0.0.2",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^3.0.0",
+    "gulp-uglifycss": "^1.0.8",
     "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {

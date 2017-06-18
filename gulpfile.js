@@ -5,6 +5,7 @@ const gulp = require('gulp'),
   source = require('vinyl-source-stream'),
   rename = require('gulp-rename'),
   buffer = require('gulp-buffer'),
+  uglifycss = require('gulp-uglifycss')
   fs = require('fs');
 
 const libs = ['./js/lib/shaka-player.compiled.js'];
@@ -24,7 +25,15 @@ gulp.task('build', () => {
   .pipe(gulp.dest('public/js/'))
 });
 
-gulp.task('prod', () => {
+gulp.task('stylesheets', () => {
+  return gulp.src('public/stylesheets/player.css')
+    .pipe(uglifycss())
+    .pipe(rename('eyevinnplayer.css'))
+    .pipe(rename({ extname: ".min.css" }))
+    .pipe(gulp.dest('dist/stylesheets'))
+});
+
+gulp.task('prod', ['stylesheets'], () => {
   const b = browserify({
     entries: [ 'js/index.js' ],
     noParse: libs,
