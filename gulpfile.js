@@ -4,6 +4,7 @@ const gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   source = require('vinyl-source-stream'),
   rename = require('gulp-rename'),
+  buffer = require('gulp-buffer'),
   fs = require('fs');
 
 const libs = ['./js/lib/shaka-player.compiled.js'];
@@ -35,7 +36,8 @@ gulp.task('prod', () => {
   })
   .bundle()
   .pipe(source('player.js'))
-  .pipe(rename('player' + '-' + process.env.npm_package_version + '.js'))
+  .pipe(buffer())
+  .pipe(rename('eyevinnplayer.js'))
   .pipe(rename({ extname: ".min.js" }))
   .pipe(uglify())
   .pipe(gulp.dest('dist/js/'))
