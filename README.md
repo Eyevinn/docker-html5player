@@ -21,8 +21,8 @@ The Eyevinn HTML5 player is a Javascript player that provides a skin with player
 ```
 <html>
   <head>
-    <script type="text/javascript" src="/js/player.js" defer></script>
-    <link rel="stylesheet" href="/stylesheets/player.css"/>
+    <script type="text/javascript" src="/dist/js/eyevinnplayer.min.js" defer></script>
+    <link rel="stylesheet" href="/dist//stylesheets/eyevinnplayer.min.css"/>
   </head>
   <body>
     <div id="player-container"></div>
