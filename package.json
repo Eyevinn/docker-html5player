@@ -12,10 +12,19 @@
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-buffer": "0.0.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglifycss": "^1.0.8",
+    "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
     "build": "$(npm bin)/gulp build",
+    "predist": "rm -rf dist/",
+    "dist": "$(npm bin)/gulp prod",
+    "version": "npm run dist && git add -A dist",
+    "postversion": "git push && git push --tags",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jonas Birmé, Eyevinn Technology (info@eyevinn.se)",
