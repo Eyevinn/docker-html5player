@@ -1,6 +1,6 @@
 #!/bin/bash
 DOCKERCMD=`which docker`
-VERSION=`cat version`
+VERSION=`cat docker-version`
 
 if [ -z $DOCKERCMD ]; then
   echo "Please install docker first"
